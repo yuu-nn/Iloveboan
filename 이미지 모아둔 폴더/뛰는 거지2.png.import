@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0hjgh17hr1vu"
-path="res://.godot/imported/거지1.png-b75345d1534e62c82c68ce97cabd26d8.ctex"
+uid="uid://c0dclklwd12uh"
+path="res://.godot/imported/뛰는 거지2.png-127bceabc9ccf6a9949275f1b12f4b2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://거지1.png"
-dest_files=["res://.godot/imported/거지1.png-b75345d1534e62c82c68ce97cabd26d8.ctex"]
+source_file="res://이미지 모아둔 폴더/뛰는 거지2.png"
+dest_files=["res://.godot/imported/뛰는 거지2.png-127bceabc9ccf6a9949275f1b12f4b2f.ctex"]
 
 [params]
 

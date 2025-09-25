@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://kl4q5c7cin5o"]
+
+[ext_resource type="Script" uid="uid://8rvmhfajhf64" path="res://player.gd" id="1_6rh3o"]
+[ext_resource type="Texture2D" uid="uid://c0dclklwd12uh" path="res://이미지 모아둔 폴더/뛰는 거지2.png" id="2_jlnug"]
+[ext_resource type="Texture2D" uid="uid://da0h36bqgistk" path="res://이미지 모아둔 폴더/뛰는 거지1.png" id="3_3wb7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiyhu"]
+
+[node name="jumpgame" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_6rh3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource("RectangleShape2D_eiyhu")
+
+[node name="뛰는거지2" type="Sprite2D" parent="player"]
+position = Vector2(154, 314)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jlnug")
+
+[node name="뛰는거지1" type="Sprite2D" parent="player"]
+position = Vector2(154.00012, 314)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_3wb7w")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+
+[node name="ObstacleSpawner" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
