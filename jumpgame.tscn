@@ -1,28 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://kl4q5c7cin5o"]
+[gd_scene load_steps=8 format=3 uid="uid://kl4q5c7cin5o"]
 
 [ext_resource type="Script" uid="uid://8rvmhfajhf64" path="res://player.gd" id="1_6rh3o"]
-[ext_resource type="Texture2D" uid="uid://c0dclklwd12uh" path="res://이미지 모아둔 폴더/뛰는 거지2.png" id="2_jlnug"]
-[ext_resource type="Texture2D" uid="uid://da0h36bqgistk" path="res://이미지 모아둔 폴더/뛰는 거지1.png" id="3_3wb7w"]
+[ext_resource type="Texture2D" uid="uid://c0hjgh17hr1vu" path="res://이미지 모아둔 폴더/거지.png" id="1_8k40t"]
+[ext_resource type="Texture2D" uid="uid://c4gjwbpogdxeh" path="res://이미지 모아둔 폴더/뛰는 거지.png" id="3_06rir"]
+[ext_resource type="Script" uid="uid://cs7l0oq5x4e03" path="res://parallax_background.gd" id="4_06rir"]
+[ext_resource type="Texture2D" uid="uid://dgia45ldo41ws" path="res://이미지 모아둔 폴더/SKY.png" id="5_3nmhn"]
+[ext_resource type="Texture2D" uid="uid://dllutggy87u6r" path="res://이미지 모아둔 폴더/배경 2.png" id="6_nil1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiyhu"]
+size = Vector2(98.9375, 151.25)
 
 [node name="jumpgame" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_6rh3o")
 
+[node name="거지" type="Sprite2D" parent="player"]
+position = Vector2(106.04004, 443.55997)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_8k40t")
+
+[node name="뛰는거지" type="Sprite2D" parent="player"]
+position = Vector2(114.04004, 450.56)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_06rir")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(110.57126, 446.93497)
 shape = SubResource("RectangleShape2D_eiyhu")
-
-[node name="뛰는거지2" type="Sprite2D" parent="player"]
-position = Vector2(154, 314)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_jlnug")
-
-[node name="뛰는거지1" type="Sprite2D" parent="player"]
-position = Vector2(154.00012, 314)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_3wb7w")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
@@ -33,10 +38,23 @@ texture = ExtResource("3_3wb7w")
 [node name="ObstacleSpawner" type="Node2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("4_06rir")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer(SKY)" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2457, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer(SKY)"]
+position = Vector2(1238, 321)
+scale = Vector2(2.6, 1.25)
+texture = ExtResource("5_3nmhn")
+
+[node name="ParallaxLayer(CLOUD)" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2457, 0)
+
+[node name="배경2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer(CLOUD)"]
+position = Vector2(1229, 363)
+scale = Vector2(1.6, 0.7)
+texture = ExtResource("6_nil1u")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
