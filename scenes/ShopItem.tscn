@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://behiqb083bfc0"]
+
+[ext_resource type="Script" uid="uid://bthm0x58oq3yx" path="res://scenes/ShopItem.gd" id="1_fxw1a"]
+
+[node name="ShopItem" type="PanelContainer"]
+custom_minimum_size = Vector2(240, 140)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fxw1a")
+
+[node name="ItemVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="ItemVBox"]
+layout_mode = 2
+text = "아이템 이름"
+
+[node name="Icon" type="TextureRect" parent="ItemVBox"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="BottomBar" type="HBoxContainer" parent="ItemVBox"]
+layout_mode = 2
+alignment = 2
+
+[node name="PriceLabel" type="Label" parent="ItemVBox/BottomBar"]
+layout_mode = 2
+text = "100 SC"
+
+[node name="BuyBtn" type="Button" parent="ItemVBox/BottomBar"]
+layout_mode = 2
+text = "구매"

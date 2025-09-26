@@ -1,7 +1,52 @@
-[gd_scene format=3 uid="uid://b741yjs11it2d"]
+[gd_scene load_steps=2 format=3 uid="uid://b741yjs11it2d"]
+
+[ext_resource type="Script" uid="uid://dwegerixrrhhu" path="res://scenes/ShopScene.gd" id="1_i5axx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5axx")
+
+[node name="RootMargin" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="RootMargin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="RootMargin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "상점"
+horizontal_alignment = 1
+
+[node name="TopBar" type="HBoxContainer" parent="RootMargin/VBox"]
+layout_mode = 2
+
+[node name="SCLabel" type="Label" parent="RootMargin/VBox/TopBar"]
+layout_mode = 2
+
+[node name="SCValue" type="Label" parent="RootMargin/VBox/TopBar"]
+layout_mode = 2
+text = "0"
+
+[node name="Scroller" type="ScrollContainer" parent="RootMargin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Grid" type="GridContainer" parent="RootMargin/VBox/Scroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
