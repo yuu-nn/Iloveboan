@@ -18,10 +18,10 @@ offset_bottom = 40.0
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 17.0
-offset_right = 755.0
-offset_bottom = 80.0
+offset_left = 315.0
+offset_top = 31.0
+offset_right = 732.0
+offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.78130656, 0.94014764, 0.9659187, 1)
 theme_override_font_sizes/font_size = 45
 text = "아이러브보안 제작자"
@@ -30,10 +30,10 @@ vertical_alignment = 1
 
 [node name="Names" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 117.0
-offset_right = 608.0
-offset_bottom = 329.0
+offset_left = 476.0
+offset_top = 115.0
+offset_right = 581.0
+offset_bottom = 327.0
 
 [node name="Name1" type="Label" parent="Names"]
 layout_mode = 2
@@ -59,10 +59,10 @@ text = "최연수"
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -50.0
-offset_right = 232.0
-offset_bottom = -19.0
+offset_left = 10.0
+offset_top = -29.0
+offset_right = 241.0
+offset_bottom = 2.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 27
 text = "시작으로 돌아가기"
