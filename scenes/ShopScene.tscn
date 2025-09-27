@@ -47,6 +47,23 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
-columns = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="TabBar" type="Control" parent="RootMargin/VBox"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RootMargin/VBox/TabBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EmployeeTabButton" type="Button" parent="RootMargin/VBox/TabBar/HBoxContainer"]
+layout_mode = 2
+
+[node name="OfficeTabButton" type="Button" parent="RootMargin/VBox/TabBar/HBoxContainer"]
+layout_mode = 2
+
+[node name="DecorTabButton" type="Button" parent="RootMargin/VBox/TabBar/HBoxContainer"]
+layout_mode = 2

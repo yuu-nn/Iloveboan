@@ -1,0 +1,142 @@
+[gd_scene load_steps=3 format=3 uid="uid://c04nh6fgm6tfy"]
+
+[ext_resource type="StyleBox" uid="uid://bok8bjy3ybhml" path="res://themes/panel_card.tres" id="1_0m1qb"]
+[ext_resource type="Script" uid="uid://dsvax4202m3t8" path="res://scenes/SettingsScene.gd" id="1_8limm"]
+
+[node name="SettingsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8limm")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RootVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="_TemplatePanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_0m1qb")
+
+[node name="HeaderHBox" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/HeaderHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "⚙️ 게임 설정"
+
+[node name="SubtitleLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/HeaderHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6117647, 0.6392157, 0.6862745, 1)
+theme_override_font_sizes/font_size = 14
+text = "Settings"
+horizontal_alignment = 2
+
+[node name="NicknamePanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+layout_mode = 2
+
+[node name="NicknameVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NickLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "닉네임 변경"
+
+[node name="NickInputRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NickLineEdit" type="LineEdit" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox/NickInputRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "닉네임을 입력하세요"
+
+[node name="NickApplyButton" type="Button" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox/NickInputRow"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "변경"
+
+[node name="ResetPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_0m1qb")
+
+[node name="ResetVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/ResetPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ResetLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/ResetPanel/ResetVBox"]
+layout_mode = 2
+text = "게임 데이터 초기화"
+
+[node name="ResetButton" type="Button" parent="ScrollContainer/MarginContainer/RootVBox/ResetPanel/ResetVBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "초기화"
+
+[node name="AudioPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_0m1qb")
+
+[node name="AudioVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BgmRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BgmLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/BgmRow"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "\"배경음\""
+
+[node name="BgmSlider" type="HSlider" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/BgmRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SfxRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SfxLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/SfxRow"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "\"효과음\""
+
+[node name="SfxSlider" type="HSlider" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/SfxRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InfoLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6117647, 0.6392157, 0.6862745, 1)
+theme_override_font_sizes/font_size = 13
+text = "버전 0.1.0 · 제작: Team Iloveboan"
+horizontal_alignment = 1
+vertical_alignment = 1
