@@ -1,7 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://c04nh6fgm6tfy"]
+[gd_scene load_steps=7 format=3 uid="uid://c04nh6fgm6tfy"]
 
 [ext_resource type="StyleBox" uid="uid://bok8bjy3ybhml" path="res://themes/panel_card.tres" id="1_0m1qb"]
 [ext_resource type="Script" uid="uid://dsvax4202m3t8" path="res://scenes/SettingsScene.gd" id="1_8limm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8limm"]
+bg_color = Color(0.9529412, 0.95686275, 0.9647059, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.23137255, 0.50980395, 0.9647059, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i27r7"]
+bg_color = Color(0.9372549, 0.9647059, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5764706, 0.77254903, 0.99215686, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6yml"]
+bg_color = Color(0.99607843, 0.8862745, 0.8862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.972549, 0.44313726, 0.44313726, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fynfb"]
+bg_color = Color(0.9411765, 0.99215686, 0.95686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.93333334, 0.9490196, 1, 1)
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
@@ -24,116 +68,141 @@ grow_vertical = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8limm")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="RootVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+[node name="RootVBox" type="VBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="_TemplatePanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+[node name="_TemplatePanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox"]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("1_0m1qb")
 
-[node name="HeaderHBox" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+[node name="HeaderHBox" type="HBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox"]
 layout_mode = 2
 size_flags_vertical = 5
 theme_override_constants/separation = 10
 
-[node name="TitleLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/HeaderHBox"]
+[node name="TitleLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/HeaderHBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "⚙️ 게임 설정"
 
-[node name="SubtitleLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/HeaderHBox"]
+[node name="SubtitleLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/HeaderHBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6117647, 0.6392157, 0.6862745, 1)
 theme_override_font_sizes/font_size = 14
 text = "Settings"
 horizontal_alignment = 2
 
-[node name="NicknamePanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+[node name="ContentFlow" type="VBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox"]
+clip_contents = true
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="NicknameVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel"]
+[node name="NicknamePanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i27r7")
+
+[node name="NicknameVBox" type="VBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="NickLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox"]
+[node name="NickLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "닉네임 변경"
 
-[node name="NickInputRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox"]
+[node name="NickInputRow" type="HBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="NickLineEdit" type="LineEdit" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox/NickInputRow"]
+[node name="NickLineEdit" type="LineEdit" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox/NickInputRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "닉네임을 입력하세요"
 
-[node name="NickApplyButton" type="Button" parent="ScrollContainer/MarginContainer/RootVBox/NicknamePanel/NicknameVBox/NickInputRow"]
+[node name="NickApplyButton" type="Button" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox/NickInputRow"]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 text = "변경"
 
-[node name="ResetPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+[node name="ResetPanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow"]
+custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("1_0m1qb")
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6yml")
 
-[node name="ResetVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/ResetPanel"]
+[node name="ResetVBox" type="VBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/ResetPanel"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ResetLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/ResetPanel/ResetVBox"]
+[node name="ResetLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/ResetPanel/ResetVBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "게임 데이터 초기화"
 
-[node name="ResetButton" type="Button" parent="ScrollContainer/MarginContainer/RootVBox/ResetPanel/ResetVBox"]
+[node name="ResetButton" type="Button" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/ResetPanel/ResetVBox"]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 text = "초기화"
 
-[node name="AudioPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/RootVBox"]
+[node name="AudioPanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow"]
+custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("1_0m1qb")
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fynfb")
 
-[node name="AudioVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel"]
+[node name="AudioVBox" type="VBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="BgmRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox"]
+[node name="BgmRow" type="HBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel/AudioVBox"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 9
 
-[node name="BgmLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/BgmRow"]
+[node name="BgmLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel/AudioVBox/BgmRow"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.25490198, 0.31764707, 1)
+theme_override_font_sizes/font_size = 14
 text = "\"배경음\""
 
-[node name="BgmSlider" type="HSlider" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/BgmRow"]
+[node name="BgmSlider" type="HSlider" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel/AudioVBox/BgmRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SfxRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox"]
+[node name="SfxRow" type="HBoxContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel/AudioVBox"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 9
 
-[node name="SfxLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/SfxRow"]
+[node name="SfxLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel/AudioVBox/SfxRow"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.25490198, 0.31764707, 1)
+theme_override_font_sizes/font_size = 14
 text = "\"효과음\""
 
-[node name="SfxSlider" type="HSlider" parent="ScrollContainer/MarginContainer/RootVBox/AudioPanel/AudioVBox/SfxRow"]
+[node name="SfxSlider" type="HSlider" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/AudioPanel/AudioVBox/SfxRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoLabel" type="Label" parent="ScrollContainer/MarginContainer/RootVBox"]
+[node name="InfoLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6117647, 0.6392157, 0.6862745, 1)
 theme_override_font_sizes/font_size = 13
