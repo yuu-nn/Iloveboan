@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwqhndt2mvc25" path="res://이미지 모아둔 폴더/장애물-악성웹.png" id="1_gv87d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2usg8"]
-size = Vector2(115.75, 115.5)
+size = Vector2(78.875, 85.75)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_2usg8")
@@ -14,5 +14,5 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_gv87d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.125, 0.25)
+position = Vector2(-6, 8)
 shape = SubResource("RectangleShape2D_2usg8")

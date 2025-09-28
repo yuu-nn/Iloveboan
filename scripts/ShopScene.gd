@@ -1,12 +1,13 @@
 extends Control
 
-# 안전하게 경로로 잡기 (고유이름 % 안 씀)
+# 안전하게 경로로 잡기
 @onready var sc_value: Label = $RootMargin/VBox/TopBar/SCValue
 @onready var grid: GridContainer = $RootMargin/VBox/Scroller/Grid
-# 탭 버튼 노드
+
+# 탭 버튼
 @onready var tab_employees: Button = $RootMargin/VBox/TabBar/HBoxContainer/EmployeeTabButton
-@onready var tab_office: Button = $RootMargin/VBox/TabBar/HBoxContainer/OfficeTabButton
-@onready var tab_decor: Button = $RootMargin/VBox/TabBar/HBoxContainer/DecorTabButton
+@onready var tab_office: Button    = $RootMargin/VBox/TabBar/HBoxContainer/OfficeTabButton
+@onready var tab_decor: Button     = $RootMargin/VBox/TabBar/HBoxContainer/DecorTabButton
 
 # 오토로드 GameState
 @onready var GS: Node = get_node("/root/GameState")
@@ -22,13 +23,10 @@ func _ready() -> void:
 	if GS.has_signal("sc_changed"):
 		GS.sc_changed.connect(_refresh_sc)
 
-	# 탭 버튼 이벤트 연결 (람다 X)
-	if tab_employees:
-		tab_employees.pressed.connect(_on_tab_employees)
-	if tab_office:
-		tab_office.pressed.connect(_on_tab_office)
-	if tab_decor:
-		tab_decor.pressed.connect(_on_tab_decor)
+	# 탭 버튼 이벤트 연결
+	if tab_employees: tab_employees.pressed.connect(_on_tab_employees)
+	if tab_office: tab_office.pressed.connect(_on_tab_office)
+	if tab_decor: tab_decor.pressed.connect(_on_tab_decor)
 
 	_refresh_sc()
 	load_items(current_category)
@@ -51,7 +49,6 @@ func _on_tab_decor() -> void:
 func _refresh_sc(_new_sc: int = -1) -> void:
 	if sc_value and GS:
 		sc_value.text = "보유 SC: %d" % GS.sc
-		# SC가 바뀌면 버튼 상태도 새로 반영
 		load_items(current_category)
 
 # ------------------------------
@@ -64,25 +61,35 @@ func load_items(category: String) -> void:
 	for c in grid.get_children():
 		c.queue_free()
 
-	# 탭 스타일 갱신
-	_update_tab_styles(category)
-
-	# GameState 데이터
+	# GameState 데이터 불러오기
 	var items_to_load = GS.SHOP_ITEMS.get(category, [])
-	print("[ShopScene] Loading %s items. Size = %d" % [category, items_to_load.size()])
+
+	# 디버깅 로그
+	print("[ShopScene] Load category =", category)
+	print("[ShopScene] Items to load =", items_to_load)
 
 	for it in items_to_load:
 		var card := ShopItemScene.instantiate() as PanelContainer
 
-		# it은 Dictionary이므로 []로 접근
+		# 최소 크기 보장 (혹시 ShopItem.tscn에 안 줬다면)
+		card.custom_minimum_size = Vector2(240, 280)
+
+		# 기본 정보
 		card.item_id = it["id"]
 		card.item_name = it["name"]
 		card.item_desc = it["desc"]
 		card.price = it["price"]
 
-		# TODO: 아이콘 로딩 (필요시)
-		# card.icon = load("res://assets/icons/%s.png" % it["id"])
+		# 아이콘 로딩
+		var icon_path = "res://itemicons/%s.png" % it["id"]
+		print("[ShopScene] Try load icon:", icon_path)
+		if ResourceLoader.exists(icon_path):
+			card.icon = load(icon_path)
+			print("[ShopScene] ✅ Icon loaded:", icon_path)
+		else:
+			print("[ShopScene] ⚠ 아이콘 없음:", icon_path)
 
+		# 구매 시그널
 		card.buy_requested.connect(_on_buy_requested)
 		grid.add_child(card)
 
@@ -94,6 +101,9 @@ func load_items(category: String) -> void:
 		else:
 			_lock_buy_button(card, "구매하기", false)
 
+	# 최종 확인 로그
+	print("[ShopScene] grid children =", grid.get_child_count())
+
 # ------------------------------
 # 구매 버튼 잠금/문구/색상
 # ------------------------------
@@ -102,33 +112,14 @@ func _lock_buy_button(card: PanelContainer, text: String, disabled: bool) -> voi
 	if btn:
 		btn.disabled = disabled
 		btn.text = text
-		btn.add_theme_color_override("font_color", Color(1, 1, 1)) # 흰 글씨
+		btn.add_theme_color_override("font_color", Color.WHITE)
 		match text:
 			"구매하기":
-				btn.modulate = Color("#22c55e")   # green-500
+				btn.modulate = Color("#22c55e")   # green
 			"SC 부족":
-				btn.modulate = Color("#facc15")   # yellow-400
+				btn.modulate = Color("#facc15")   # yellow
 			"보유중":
-				btn.modulate = Color("#9ca3af")   # gray-400
-
-# ------------------------------
-# 탭 스타일 (간단: 글씨색만)
-# ------------------------------
-func _update_tab_styles(active_category: String) -> void:
-	var tabs := {
-		"employees": tab_employees,
-		"office": tab_office,
-		"decor": tab_decor,
-	}
-
-	for cat in tabs:
-		var tab_btn: Button = tabs[cat]
-		if tab_btn == null:
-			continue
-		if cat == active_category:
-			tab_btn.add_theme_color_override("font_color", Color("#1d4ed8")) # 파랑
-		else:
-			tab_btn.add_theme_color_override("font_color", Color("#111827")) # 검정
+				btn.modulate = Color("#9ca3af")   # gray
 
 # ------------------------------
 # 구매 처리

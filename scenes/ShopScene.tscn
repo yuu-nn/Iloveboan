@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b741yjs11it2d"]
+[gd_scene load_steps=3 format=3 uid="uid://b741yjs11it2d"]
 
 [ext_resource type="Script" uid="uid://dwegerixrrhhu" path="res://scripts/ShopScene.gd" id="1_i5axx"]
+
+[sub_resource type="SystemFont" id="SystemFont_i5axx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,47 +11,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_i5axx")
 
 [node name="RootMargin" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="VBox" type="VBoxContainer" parent="RootMargin"]
 layout_mode = 2
 
 [node name="Title" type="Label" parent="RootMargin/VBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "상점"
+theme_override_colors/font_color = Color(0.11372549, 0.30588236, 0.84705883, 1)
+theme_override_fonts/font = SubResource("SystemFont_i5axx")
+theme_override_font_sizes/font_size = 40
+text = "아이러브보안 상점"
 horizontal_alignment = 1
 
 [node name="TopBar" type="HBoxContainer" parent="RootMargin/VBox"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="SCLabel" type="Label" parent="RootMargin/VBox/TopBar"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
+theme_override_font_sizes/font_size = 20
+text = "SC: "
+vertical_alignment = 1
 
 [node name="SCValue" type="Label" parent="RootMargin/VBox/TopBar"]
 layout_mode = 2
-text = "0"
-
-[node name="Scroller" type="ScrollContainer" parent="RootMargin/VBox"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Grid" type="GridContainer" parent="RootMargin/VBox/Scroller"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 12
-theme_override_constants/v_separation = 12
-columns = 3
+theme_override_colors/font_color = Color(0.98039216, 0.8, 0.08235294, 1)
+theme_override_font_sizes/font_size = 20
+text = "\"800\""
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="TabBar" type="Control" parent="RootMargin/VBox"]
 layout_mode = 2
@@ -61,9 +64,28 @@ offset_bottom = 40.0
 
 [node name="EmployeeTabButton" type="Button" parent="RootMargin/VBox/TabBar/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "\"직원 고용 👩‍💻\""
 
 [node name="OfficeTabButton" type="Button" parent="RootMargin/VBox/TabBar/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "\"사무 용품 🪑\""
 
 [node name="DecorTabButton" type="Button" parent="RootMargin/VBox/TabBar/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "\"인테리어 🖼️\""
+
+[node name="Scroller" type="ScrollContainer" parent="RootMargin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Grid" type="GridContainer" parent="RootMargin/VBox/Scroller"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
