@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c04nh6fgm6tfy"]
 
 [ext_resource type="StyleBox" uid="uid://bok8bjy3ybhml" path="res://themes/panel_card.tres" id="1_0m1qb"]
-[ext_resource type="Script" uid="uid://dsvax4202m3t8" path="res://scenes/SettingsScene.gd" id="1_8limm"]
+[ext_resource type="Script" uid="uid://dsvax4202m3t8" path="res://scripts/SettingsScene.gd" id="1_8limm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8limm"]
 bg_color = Color(0.9529412, 0.95686275, 0.9647059, 1)
