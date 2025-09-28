@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbsmjgfafew1o"]
+
+[ext_resource type="Texture2D" uid="uid://bbm85q40xv70j" path="res://이미지 모아둔 폴더/Background.jpg" id="1_c7mg7"]
+[ext_resource type="Texture2D" uid="uid://deuahyvbp6hef" path="res://이미지 모아둔 폴더/Retry.PNG" id="2_061pm"]
+[ext_resource type="Texture2D" uid="uid://b20qq13du0dlx" path="res://이미지 모아둔 폴더/NextLevel.PNG" id="3_6a6jd"]
+[ext_resource type="Texture2D" uid="uid://drea4bamugf47" path="res://이미지 모아둔 폴더/Victory.PNG" id="4_6a6jd"]
+[ext_resource type="Texture2D" uid="uid://cee2avt44wrl8" path="res://이미지 모아둔 폴더/MainMenu.PNG" id="4_nxblt"]
+[ext_resource type="Texture2D" uid="uid://dn2uqx7xx4dng" path="res://이미지 모아둔 폴더/Reward.PNG" id="6_nxblt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 15.0
+offset_right = 3493.0
+offset_bottom = 2850.0
+texture = ExtResource("1_c7mg7")
+expand_mode = 1
+
+[node name="TextureButton2" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -623.25
+offset_top = -1134.0
+offset_right = 623.25
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_6a6jd")
+texture_pressed = ExtResource("3_6a6jd")
+texture_hover = ExtResource("3_6a6jd")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1102.0
+offset_top = -1011.0
+offset_bottom = 61.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("4_nxblt")
+texture_pressed = ExtResource("4_nxblt")
+texture_hover = ExtResource("4_nxblt")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1138.625
+offset_right = 1138.625
+offset_bottom = 2213.0
+grow_horizontal = 2
+texture = ExtResource("4_6a6jd")
+
+[node name="TextureButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 1821.0
+offset_right = 1140.0
+offset_bottom = 2845.0
+texture_normal = ExtResource("2_061pm")
+texture_pressed = ExtResource("2_061pm")
+texture_hover = ExtResource("2_061pm")
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1072.5
+offset_top = -1265.0
+offset_right = 1072.5
+offset_bottom = 1265.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_nxblt")
