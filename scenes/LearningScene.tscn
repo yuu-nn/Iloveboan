@@ -1,7 +1,434 @@
-[gd_scene load_steps=0 format=3 uid="uid://bc0fmi6iq722v"]
+[gd_scene load_steps=4 format=3 uid="uid://bc0fmi6iq722v"]
+
+[ext_resource type="Texture2D" uid="uid://5edpny48idp5" path="res://이미지 모아둔 폴더/노트 배경.png" id="1_ubvh6"]
+[ext_resource type="Script" uid="uid://dw2cxq40i4wqi" path="res://scripts/LearningScene.gd" id="2_oi12q"]
+
+[sub_resource type="GDScript" id="GDScript_oi12q"]
 
 [node name="LearningScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 32.0
 offset_bottom = 35.0
+script = ExtResource("2_oi12q")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -113.00001
+offset_right = 998.0
+offset_bottom = 876.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2476522, 0.9139252)
+texture = ExtResource("1_ubvh6")
+
+[node name="PageContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1" type="Control" parent="PageContainer"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 361.0
+offset_bottom = 258.0
+
+[node name="Label" type="Label" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 141.0
+offset_right = 599.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "1. 개인정보 보호
+• 이름, 주소, 학교 이름, 전화번호는 올리면 안 돼요.
+• 인터넷에 올린 정보는 지워도 흔적이 남아요.
+• 게임 친구가 집 물어보면 절대 말하지 마세요.
+"
+
+[node name="Label2" type="Label" parent="PageContainer/Page1"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 365.0
+offset_right = 604.0
+offset_bottom = 551.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "2. 비밀번호 안전하게 만들기
+• 1234, qwerty 같은 쉬운 비밀번호는 위험해요.
+• 숫자+영어+특수문자 섞어서 8자 이상 만들어요.
+• 비밀번호는 친구와도 공유하면 안 돼요.
+"
+
+[node name="Page2" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_left = 116.0
+offset_top = -571.0
+offset_right = 469.0
+offset_bottom = -313.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label" type="Label" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 709.0
+offset_right = 1123.0
+offset_bottom = 895.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "3. 보이스피싱 / 피싱 메시지
+• \"엄마야 급히 돈 필요해\" 같은 건 믿으면 안 돼요.
+• 모르는 링크는 절대 누르지 마세요.
+• 반드시 부모님께 확인하세요.
+"
+
+[node name="Label2" type="Label" parent="PageContainer/Page2"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 941.0
+offset_right = 1133.0
+offset_bottom = 1127.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "4. 초상권 / 저작권
+• 친구 얼굴은 허락 없이 올리면 안 돼요.
+• 친구가 만든 그림·노래도 허락 없이 쓰면 안 돼요.
+• 출처를 꼭 밝혀야 해요.
+"
+
+[node name="Page3" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_left = -412.0
+offset_top = 198.0
+offset_right = -96.0
+offset_bottom = 456.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label" type="Label" parent="PageContainer/Page3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.6960001
+anchor_top = -3.9380002
+anchor_right = -1.6960001
+anchor_bottom = -3.9380002
+offset_left = 1006.93604
+offset_top = 958.004
+offset_right = 1547.936
+offset_bottom = 1144.004
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "5. 디지털 발자국
+• 인터넷 흔적은 지워도 남아요.
+• 장난 글이 나중에 문제될 수 있어요.
+• 올리기 전에 꼭 생각하세요.
+"
+
+[node name="Label2" type="Label" parent="PageContainer/Page3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.6890001
+anchor_top = -3.9380002
+anchor_right = -1.6890001
+anchor_bottom = -3.9380002
+offset_left = 1007.72406
+offset_top = 1191.004
+offset_right = 1548.724
+offset_bottom = 1377.0039
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "6. 앱 / 게임 권한
+• 설치 시 권한 요청 꼼꼼히 확인하세요.
+• 필요 없는 권한 요구 앱은 위험할 수 있어요.
+• 부모님과 함께 설치하세요.
+"
+
+[node name="Page4" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label" type="Label" parent="PageContainer/Page4"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 706.0
+offset_top = 107.0
+offset_right = 1247.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "
+7. 자동 로그인 / 로그아웃
+• PC방·학교 컴퓨터 자동 로그인 금지.
+• 비밀번호 저장 사용 금지.
+• 사용 후 꼭 로그아웃하세요.
+"
+
+[node name="Label2" type="Label" parent="PageContainer/Page4"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 711.0
+offset_top = 336.0
+offset_right = 1252.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "
+8. 기기 잠금 비밀번호
+• 휴대폰에는 반드시 비밀번호를 걸어야 해요.
+• 1111, 1234 같은 단순 비밀번호는 위험해요.
+• 잠금 없으면 개인정보가 노출돼요.
+"
+
+[node name="Page5" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label" type="Label" parent="PageContainer/Page5"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 62.0
+offset_top = 145.0
+offset_right = 603.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "9. 사진·영상 공유 주의
+• 집·학교 간판 보이는 사진은 올리면 안 돼요.
+• 위치 정보로 낯선 사람이 알 수 있어요.
+• 부모님 확인 후 올리세요.
+ 
+"
+
+[node name="Label2" type="Label" parent="PageContainer/Page5"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 63.0
+offset_top = 369.0
+offset_right = 604.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "10. 온라인 친구와 개인정보
+• 게임 친구는 실제로 누군지 몰라요.
+• 이름·주소·학교 같은 개인정보는 말하지 마세요.
+• 만나자고 하면 부모님께 알리세요.
+"
+
+[node name="Page6" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label2" type="Label" parent="PageContainer/Page6"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 695.0
+offset_top = 137.0
+offset_right = 1236.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "11. 게임 아이템 사기
+• 계정 알려주면 100% 사기예요.
+• 무료 아이템 사이트 로그인 금지.
+• 공식 거래만 사용하세요.
+"
+
+[node name="Label3" type="Label" parent="PageContainer/Page6"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 706.0
+offset_top = 369.0
+offset_right = 1247.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "12. 계정 해킹 징후
+• 비밀번호가 바뀌었으면 해킹일 수 있어요.
+• 이상하면 부모님·선생님께 알리세요.
+• 새 비밀번호 만들고 신고하세요.
+"
+
+[node name="Page7" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label2" type="Label" parent="PageContainer/Page7"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 57.0
+offset_top = 137.0
+offset_right = 598.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "13. 링크 / 첨부파일 주의
+• 모르는 파일은 절대 열지 마세요.
+• \"클릭하세요\" 링크는 위험할 수 있어요.
+• 부모님께 먼저 보여주세요.
+"
+
+[node name="Label3" type="Label" parent="PageContainer/Page7"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 53.0
+offset_top = 372.0
+offset_right = 594.0
+offset_bottom = 573.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "14. 비밀번호 여러 곳에 다르게 쓰기
+• 같은 비밀번호 여러 곳에 쓰면 위험해요.
+• 사이트마다 다르게 만들어야 안전해요.
+• 부모님과 함께 기록해두세요.
+"
+
+[node name="Page8" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label2" type="Label" parent="PageContainer/Page8"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 700.0
+offset_top = 143.0
+offset_right = 1241.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "15. USB / 외부 저장장치
+• 출처 모르는 USB는 꽂지 마세요.
+• 일부러 감염된 USB일 수도 있어요.
+• 백신 검사 후 사용하세요.
+"
+
+[node name="Label3" type="Label" parent="PageContainer/Page8"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 700.0
+offset_top = 371.0
+offset_right = 1241.0
+offset_bottom = 572.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "16. 불법 다운로드
+• 무료 영화·게임 사이트는 불법일 수 있어요.
+• 바이러스·개인정보 유출 위험이 있어요.
+• 합법 사이트만 이용하세요.
+"
+
+[node name="Page9" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label2" type="Label" parent="PageContainer/Page9"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 62.0
+offset_top = 147.0
+offset_right = 603.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "17. 광고 / 유혹 메시지
+• \"당첨되었습니다!\" 대부분 사기예요.
+• 개인정보·카드번호 입력 금지.
+• 모르는 이벤트는 부모님께 물어보세요.
+"
+
+[node name="Label3" type="Label" parent="PageContainer/Page9"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 63.0
+offset_top = 369.0
+offset_right = 604.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "18. 모르는 메시지 조심
+• 낯선 사람에게 답하지 마세요.
+• 개인정보를 묻는 '친구'도 위험해요.
+• 부모님·선생님께 보여주세요.
+"
+
+[node name="Page10" type="Control" parent="PageContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = SubResource("GDScript_oi12q")
+
+[node name="Label2" type="Label" parent="PageContainer/Page10"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 697.0
+offset_top = 143.0
+offset_right = 1238.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "19. 안전한 기기 사용
+• 공용 PC에 개인정보 입력 금지.
+• 기록·다운로드 남기면 위험해요.
+• 중요한 건 개인 기기에서만 하세요.
+"
+
+[node name="Label3" type="Label" parent="PageContainer/Page10"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 709.0
+offset_top = 368.0
+offset_right = 1250.0
+offset_bottom = 569.0
+theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_font_sizes/font_size = 22
+text = "20. 안전한 닉네임 사용
+• 닉네임에 이름·학교·나이를 넣지 마세요.
+• 개인정보와 관련 없는 단어 사용.
+• 안전한 닉네임은 신분을 지켜줘요.
+"
+
+[node name="PrevPageBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 528.0
+offset_right = 142.0
+offset_bottom = 673.0
+theme_override_colors/font_color = Color(0.7294118, 0.54509807, 0.1882353, 1)
+theme_override_font_sizes/font_size = 100
+text = "◀"
+flat = true
+
+[node name="NextPageBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1133.0
+offset_top = 529.0
+offset_right = 1241.0
+offset_bottom = 674.0
+theme_override_colors/font_color = Color(0.73010266, 0.54574156, 0.18906078, 1)
+theme_override_font_sizes/font_size = 100
+text = "▶"
+flat = true
+
+[node name="MainBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1039.0
+offset_top = 47.0
+offset_right = 1222.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 18
+text = "메인으로 돌아가기"
