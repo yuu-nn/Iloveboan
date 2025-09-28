@@ -1,35 +1,42 @@
-[gd_scene load_steps=10 format=3 uid="uid://kl4q5c7cin5o"]
+[gd_scene load_steps=16 format=3 uid="uid://kl4q5c7cin5o"]
 
 [ext_resource type="Script" uid="uid://8rvmhfajhf64" path="res://scripts/player.gd" id="1_kd01c"]
 [ext_resource type="Texture2D" uid="uid://c0hjgh17hr1vu" path="res://이미지 모아둔 폴더/거지.png" id="2_82agk"]
 [ext_resource type="Texture2D" uid="uid://c4gjwbpogdxeh" path="res://이미지 모아둔 폴더/뛰는 거지.png" id="3_wrbyo"]
 [ext_resource type="Script" uid="uid://d7d310w6j1ci" path="res://scripts/obstacle_spawner.gd" id="4_ti16c"]
+[ext_resource type="PackedScene" uid="uid://bcxueknjdigvj" path="res://scenes/obstacles/obstacle_1.tscn" id="5_4i41r"]
 [ext_resource type="Script" uid="uid://cs7l0oq5x4e03" path="res://scripts/parallax_background.gd" id="5_t2g1m"]
 [ext_resource type="Texture2D" uid="uid://dgia45ldo41ws" path="res://이미지 모아둔 폴더/SKY.png" id="6_4i41r"]
+[ext_resource type="PackedScene" uid="uid://citkr8ja8oiag" path="res://scenes/obstacles/obstacle_2.tscn" id="6_e0rck"]
 [ext_resource type="Texture2D" uid="uid://dllutggy87u6r" path="res://이미지 모아둔 폴더/배경 2.png" id="7_e0rck"]
+[ext_resource type="PackedScene" uid="uid://cqyjvyvnglsqv" path="res://scenes/obstacles/obstacle_3.tscn" id="7_ieuyw"]
+[ext_resource type="PackedScene" uid="uid://dxskr6vkf4iys" path="res://scenes/obstacles/obstacle_4.tscn" id="8_4ley2"]
+[ext_resource type="PackedScene" uid="uid://b8v7soica2rlp" path="res://scenes/obstacles/obstacle_5.tscn" id="9_mamp7"]
+[ext_resource type="Script" uid="uid://dsm5t5l6fmmct" path="res://scripts/gamecontroller.gd" id="13_e0rck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiyhu"]
-size = Vector2(98.9375, 151.25)
+size = Vector2(94.89752, 135.69005)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nmhn"]
+size = Vector2(1269.75, 156)
 
-[node name="jumpgame" type="Node2D"]
+[node name="jumpgame" type="Node2D" groups=["gamecontroller", "player"]]
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." groups=["gamecontroller", "player"]]
 script = ExtResource("1_kd01c")
 
 [node name="거지" type="Sprite2D" parent="player"]
-position = Vector2(129.04001, 494.55997)
+position = Vector2(129.04001, 486.56)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_82agk")
 
 [node name="뛰는거지" type="Sprite2D" parent="player"]
-position = Vector2(137.04, 501.56)
+position = Vector2(137.04, 493.56)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("3_wrbyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(133.57123, 497.93497)
+position = Vector2(131.55124, 482.15497)
 shape = SubResource("RectangleShape2D_eiyhu")
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -37,12 +44,14 @@ shape = SubResource("RectangleShape2D_eiyhu")
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(640.125, 641)
 shape = SubResource("RectangleShape2D_3nmhn")
 
-[node name="ObstacleSpawner" type="Node2D" parent="."]
+[node name="ObstacleSpawner" type="Node2D" parent="." groups=["gamecontroller", "player"]]
 script = ExtResource("4_ti16c")
+obstacle_scenes = Array[PackedScene]([ExtResource("5_4i41r"), ExtResource("6_e0rck"), ExtResource("7_ieuyw"), ExtResource("8_4ley2"), ExtResource("9_mamp7")])
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." groups=["gamecontroller", "player"]]
 script = ExtResource("5_t2g1m")
 
 [node name="ParallaxLayer(SKY)" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -73,3 +82,6 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="gamecontroller" type="Node2D" parent="." groups=["gamecontroller", "player"]]
+script = ExtResource("13_e0rck")
