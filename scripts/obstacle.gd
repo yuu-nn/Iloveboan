@@ -9,6 +9,6 @@ func _ready():
 func _process(delta):
 	position.x -= speed * delta
 	
-	# 화면 왼쪽 끝으로 나가면 제거
+	# 화면 왼쪽 끝으로 나가면  제거
 	if position.x < -200:
 		queue_free()
