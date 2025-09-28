@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://behiqb083bfc0"]
 
-[ext_resource type="Script" uid="uid://bthm0x58oq3yx" path="res://scenes/ShopItem.gd" id="1_fxw1a"]
+[ext_resource type="Script" uid="uid://bthm0x58oq3yx" path="res://scripts/ShopItem.gd" id="1_fxw1a"]
 [ext_resource type="StyleBox" uid="uid://dj630tnmu0684" path="res://themes/item_card_panel.tres" id="1_x134o"]
 [ext_resource type="StyleBox" uid="uid://dt4ttqproyk4p" path="res://themes/btn_green_pressed.tres" id="3_yiefq"]
 [ext_resource type="StyleBox" uid="uid://bwsduhudj7ocm" path="res://themes/btn_green_hover.tres" id="4_76k32"]

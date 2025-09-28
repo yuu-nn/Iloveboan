@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6gb2x5jbkmsc"]
+[gd_scene load_steps=0 format=3 uid="uid://bc0fmi6iq722v"]
 
 [node name="LearningScene" type="Control"]
 layout_mode = 3
