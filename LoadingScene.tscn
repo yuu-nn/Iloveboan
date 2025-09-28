@@ -5,33 +5,41 @@
 [node name="LoadingScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 30.0
-offset_top = 33.0
-offset_right = 70.0
-offset_bottom = 73.0
+offset_left = 221.0
+offset_top = 390.0
+offset_right = 994.0
+offset_bottom = 424.0
 script = ExtResource("1_4hl00")
 
 [node name="LOADING" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.75000006
-anchor_top = -0.75000006
-anchor_right = -0.75000006
-anchor_bottom = -0.75000006
-offset_left = 505.0
-offset_top = 333.0
-offset_right = 666.0
-offset_bottom = 375.0
-theme_override_font_sizes/font_size = 30
+anchor_left = -0.40300003
+anchor_top = -10.975
+anchor_right = -0.259
+anchor_bottom = -10.534
+offset_left = 649.51904
+offset_top = 410.15002
+offset_right = 720.20703
+offset_bottom = 442.156
+theme_override_colors/font_color = Color(0.6039751, 0.7939169, 0.94025546, 1)
+theme_override_font_sizes/font_size = 34
 text = "LOADING..."
 horizontal_alignment = 1
+metadata/_edit_group_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 229.0
-offset_top = 264.0
-offset_right = 883.0
-offset_bottom = 291.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.31800002
+anchor_top = -8.029
+anchor_right = -0.31800002
+anchor_bottom = -8.029
+offset_left = 220.81401
+offset_top = 255.98602
+offset_right = 1114.314
+offset_bottom = 282.98602
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
