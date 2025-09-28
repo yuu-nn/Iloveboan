@@ -2,8 +2,8 @@ extends Node2D
 
 @export var obstacle_scenes: Array[PackedScene]
 
-@export var min_interval := 1.5
-@export var max_interval := 3.5
+@export var min_interval := 0.7
+@export var max_interval := 1.5
 
 var timer := 0.0
 var next_spawn_time := 0.0

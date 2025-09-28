@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://0suxljpqrrcg" path="res://scripts/obstacle.gd" id="1_wggcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wggcw"]
-size = Vector2(135.5, 143)
+size = Vector2(92, 97)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_wggcw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.75, 10.5)
+position = Vector2(-6, 10.5)
 shape = SubResource("RectangleShape2D_wggcw")
 
 [node name="장애물악성웹2" type="Sprite2D" parent="."]
