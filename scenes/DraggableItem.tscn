@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://3xfy0lcrespv"]
+
+[ext_resource type="Script" uid="uid://1pbex6c4eeec" path="res://scripts/DraggableItem.gd" id="1_66nxq"]
+
+[node name="DraggableItem" type="TextureRect"]
+custom_minimum_size = Vector2(72, 72)
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("1_66nxq")
+
+[node name="Caption" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "책상"
+
+[node name="Caption" type="Label" parent="Caption"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "책상"

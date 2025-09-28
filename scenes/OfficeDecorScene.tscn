@@ -1,0 +1,161 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqfeg01nluqul"]
+
+[ext_resource type="StyleBox" uid="uid://dawf1phh1d2cj" path="res://themes/blue.tres" id="1_u8tt8"]
+[ext_resource type="Script" uid="uid://d4l7oslh677nc" path="res://scripts/OfficeDecorScene.gd" id="1_x6m5j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6m5j"]
+bg_color = Color(0.7877592, 0.78775924, 0.787759, 0.99215686)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2484003, 0.24840015, 0.24840003, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="OfficeDecorScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6m5j")
+
+[node name="RootMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="RootMargin"]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="RootMargin/VBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HomeIcon" type="TextureRect" parent="RootMargin/VBox/TopBar"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="RootMargin/VBox/TopBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1254902, 0.4862745, 0.99215686, 1)
+text = "사무실 꾸미기 (인테리어)"
+
+[node name="HSpacer" type="Control" parent="RootMargin/VBox/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Brand" type="Label" parent="RootMargin/VBox/TopBar"]
+layout_mode = 2
+text = "아이러브보안"
+
+[node name="Content" type="HBoxContainer" parent="RootMargin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CanvasPanel" type="PanelContainer" parent="RootMargin/VBox/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_u8tt8")
+
+[node name="CanvasMargin" type="MarginContainer" parent="RootMargin/VBox/Content/CanvasPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CanvasArea" type="Control" parent="RootMargin/VBox/Content/CanvasPanel/CanvasMargin"]
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="RootMargin/VBox/Content/CanvasPanel/CanvasMargin/CanvasArea"]
+custom_minimum_size = Vector2(560, 120)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "여기는 사무실 배치 공간입니다 (Godot Canvas 영역)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TrophyBtn" type="Button" parent="RootMargin/VBox/Content/CanvasPanel/CanvasMargin/CanvasArea"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(-16, -16)
+text = "아이"
+
+[node name="Sidebar" type="PanelContainer" parent="RootMargin/VBox/Content"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x6m5j")
+
+[node name="SideVBox" type="VBoxContainer" parent="RootMargin/VBox/Content/Sidebar"]
+layout_mode = 2
+
+[node name="SectionLayout" type="Label" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+text = "배치 관리"
+
+[node name="SaveRow" type="HBoxContainer" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+
+[node name="SaveBtn" type="Button" parent="RootMargin/VBox/Content/Sidebar/SideVBox/SaveRow"]
+layout_mode = 2
+text = "배치 저장"
+
+[node name="LoadRow" type="HBoxContainer" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+
+[node name="LoadBtn" type="Button" parent="RootMargin/VBox/Content/Sidebar/SideVBox/LoadRow"]
+layout_mode = 2
+text = "배치 불러오기"
+
+[node name="ResetRow" type="HBoxContainer" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+
+[node name="ResetBtn" type="Button" parent="RootMargin/VBox/Content/Sidebar/SideVBox/ResetRow"]
+layout_mode = 2
+text = "초기화"
+
+[node name="Separator" type="HSeparator" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+
+[node name="SectionItems" type="Label" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+text = "내 장식창 (구매 아이템)"
+
+[node name="ItemGrid" type="GridContainer" parent="RootMargin/VBox/Content/Sidebar/SideVBox"]
+layout_mode = 2
+columns = 2
+
+[node name="BtnChair" type="Button" parent="RootMargin/VBox/Content/Sidebar/SideVBox/ItemGrid"]
+layout_mode = 2
+text = "의자, 아이콘 가능"
+
+[node name="BtnComputer" type="Button" parent="RootMargin/VBox/Content/Sidebar/SideVBox/ItemGrid"]
+layout_mode = 2
+text = "Computer
+"
+
+[node name="BtnDesk" type="Button" parent="RootMargin/VBox/Content/Sidebar/SideVBox/ItemGrid"]
+layout_mode = 2
+text = "Desk"
