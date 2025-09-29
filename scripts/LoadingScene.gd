@@ -1,7 +1,7 @@
 extends Control
 
 @onready var progress_bar: ProgressBar = $ProgressBar
-@onready var character: Sprite2D = $Sprite2D
+@onready var sprite2d: Sprite2D = $Sprite2D
 @onready var loading_label: Label = $LOADING   # Inspector에서 Label 노드 이름 확인!
 
 var frames: Array[Texture2D] = []
@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 	# 캐릭터 위치 (로딩바 따라가기)
 	var ratio := progress_bar.value / 100.0
 	var x := progress_bar.position.x + progress_bar.size.x * ratio
-	character.position = Vector2(x, progress_bar.position.y - 40)
+	sprite2d.position = Vector2(x, progress_bar.position.y - 40)
 
 	# 프레임 애니메이션 (뛰는 동작)
 	acc += delta
@@ -59,9 +59,9 @@ func _process(delta: float) -> void:
 # ───────────────────────────────
 # 프레임 교체 + 크기 통일
 func _apply_frame(i: int) -> void:
-	character.texture = frames[i]
-	_fit_sprite_to_box(character, target_box)
-	character.rotation_degrees = 0
+	sprite2d.texture = frames[i]
+	_fit_sprite_to_box(sprite2d, target_box)
+	sprite2d.rotation_degrees = 0
 
 # 캐릭터 크기를 항상 같은 박스 안에 맞추기
 func _fit_sprite_to_box(spr: Sprite2D, box: Vector2) -> void:

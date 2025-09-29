@@ -8,7 +8,7 @@ extends Control
 @onready var study_button = $STUDY
 @onready var store_button = $STORE
 @onready var game_button = $GAME
-@onready var profile_button = $PROFILE
+@onready var setting_button = $SETTING
 
 # ───────────────────────────────
 # 초기화
@@ -22,7 +22,7 @@ func _ready() -> void:
 	study_button.pressed.connect(_on_study_pressed)
 	store_button.pressed.connect(_on_store_pressed)
 	game_button.pressed.connect(_on_game_pressed)
-	profile_button.pressed.connect(_on_profile_pressed)
+	setting_button.pressed.connect(_on_setting_pressed)
 
 	# Globals의 닉네임 변경 이벤트 연결 (Autoload 등록 필수!)
 	if Globals.has_signal("nickname_changed"):
@@ -43,7 +43,7 @@ func _on_game_pressed() -> void:
 	# 🎮 게임하기 버튼 → 로딩씬으로 이동
 	get_tree().change_scene_to_file("res://scenes/jumpgame.tscn")
 
-func _on_profile_pressed() -> void:
+func _on_setting_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ProfileScene.tscn")
 
 # ───────────────────────────────
