@@ -40,6 +40,7 @@ func _on_store_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ShopScene.tscn")
 
 func _on_game_pressed() -> void:
+	# 🎮 게임하기 버튼 → 로딩씬으로 이동
 	get_tree().change_scene_to_file("res://scenes/jumpgame.tscn")
 
 func _on_profile_pressed() -> void:
@@ -50,4 +51,3 @@ func _on_profile_pressed() -> void:
 # ───────────────────────────────
 func _on_nickname_changed(new_name: String) -> void:
 	nickname_label.text = "NICKNAME: " + new_name
-	
