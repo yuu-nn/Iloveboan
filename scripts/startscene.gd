@@ -3,3 +3,11 @@ extends Control
 func _on_button_pressed():
 	# MainScene이 아니라 LoadingScene으로 먼저 전환
 	get_tree().change_scene_to_file("res://scenes/LoadingScene.tscn")
+
+
+func Credit() -> void:
+	pass # Replace with function body.
+
+
+func StartScene() -> void:
+	get_tree().change_scene_to_file("res://scenes/CreditScene.tscn")

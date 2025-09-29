@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://diwoqp0laypbe"]
+[gd_scene load_steps=4 format=3 uid="uid://diwoqp0laypbe"]
 
 [ext_resource type="Script" uid="uid://calt2nktultg" path="res://scripts/CreditScene.gd" id="1_nt8iv"]
 [ext_resource type="Texture2D" uid="uid://ddgrq25l6olvi" path="res://이미지 모아둔 폴더/회색회색.png" id="2_i8sqb"]
+[ext_resource type="FontFile" uid="uid://kvcriw8j8d3i" path="res://NeoDunggeunmoPro-Regular.ttf" id="3_j0get"]
 
 [node name="CreditScene" type="Control"]
 layout_mode = 3
@@ -32,6 +33,7 @@ offset_top = 102.0
 offset_right = 753.0
 offset_bottom = 165.0
 theme_override_colors/font_color = Color(0.78130656, 0.94014764, 0.9659187, 1)
+theme_override_fonts/font = ExtResource("3_j0get")
 theme_override_font_sizes/font_size = 45
 text = "아이러브보안 제작자"
 horizontal_alignment = 1
@@ -46,21 +48,25 @@ offset_bottom = 398.0
 
 [node name="Name1" type="Label" parent="Names"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j0get")
 theme_override_font_sizes/font_size = 35
 text = "김승연"
 
 [node name="Name2" type="Label" parent="Names"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j0get")
 theme_override_font_sizes/font_size = 35
 text = "장유나"
 
 [node name="Name3" type="Label" parent="Names"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j0get")
 theme_override_font_sizes/font_size = 35
 text = "장정연"
 
 [node name="Name4" type="Label" parent="Names"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j0get")
 theme_override_font_sizes/font_size = 35
 text = "최연수"
 
@@ -73,6 +79,7 @@ offset_top = 508.0
 offset_right = 1138.0
 offset_bottom = 539.0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_j0get")
 theme_override_font_sizes/font_size = 27
 text = "시작으로 돌아가기"
 

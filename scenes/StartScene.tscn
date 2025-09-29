@@ -91,3 +91,4 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [connection signal="pressed" from="시작배경/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="시작배경/만든사람" to="." method="StartScene"]
