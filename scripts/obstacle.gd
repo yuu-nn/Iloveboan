@@ -1,4 +1,3 @@
-# Obstacle.gd
 extends Area2D
 
 @export var speed: float = 200.0
@@ -15,10 +14,10 @@ func _process(delta: float) -> void:
 	if bg and "scroll_speed" in bg:
 		bg_speed = bg.scroll_speed
 
-	# 장애물 이동 = 기본 속도 + 배경 속도
+	# 장애물 이동
 	position.x -= (speed + bg_speed) * delta
 
-	# 플레이어를 지나쳤는지 체크
+	# 플레이어 통과 체크
 	var player = get_tree().get_first_node_in_group("player")
 	if player and not passed and (position.x + 50.0) < player.position.x:
 		passed = true
@@ -34,5 +33,11 @@ func _on_body_entered(body: Node) -> void:
 		game_over()
 
 func game_over() -> void:
-	get_tree().reload_current_scene()
+	var game = get_tree().root.get_node("jumpgame/gamecontroller")
+	if game:
+		Globals.score = game.score    # 점수 저장
+	call_deferred("_go_to_result")    # 물리 루프가 끝난 뒤 실행
 	
+
+func _go_to_result() -> void:
+	get_tree().change_scene_to_file("res://scenes/ResultScene.tscn")

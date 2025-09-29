@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://2ubxvh5jmgs2"]
 
 [ext_resource type="Texture2D" uid="uid://c0hjgh17hr1vu" path="res://이미지 모아둔 폴더/거지.png" id="1_3mqji"]
-[ext_resource type="Script" uid="uid://c2k5mrdmanh6r" path="res://scenes/mainscene.gd" id="1_c6dvc"]
+[ext_resource type="Script" uid="uid://c2k5mrdmanh6r" path="res://scripts/mainscene.gd" id="1_c6dvc"]
 [ext_resource type="Texture2D" uid="uid://bhem0inad0x8y" path="res://이미지 모아둔 폴더/LargePixelOffice.png" id="1_ibiss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibiss"]
@@ -95,7 +95,7 @@ offset_bottom = 483.0
 theme_override_font_sizes/font_size = 40
 text = "GAME"
 
-[node name="PROFILE" type="Button" parent="."]
+[node name="SETTING" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.08046875
@@ -107,5 +107,5 @@ offset_top = -163.0
 offset_right = 684.0
 offset_bottom = -93.0
 theme_override_font_sizes/font_size = 40
-text = "PROFILE"
+text = "SETTING"
 metadata/_edit_use_anchors_ = true
