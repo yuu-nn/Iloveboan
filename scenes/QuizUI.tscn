@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cufsyvitr16so"]
+[gd_scene load_steps=3 format=3 uid="uid://cufsyvitr16so"]
 
 [ext_resource type="Script" uid="uid://obvnxea5qj04" path="res://scripts/quiz_ui.gd" id="1_5sc5g"]
+[ext_resource type="FontFile" uid="uid://kvcriw8j8d3i" path="res://NeoDunggeunmoPro-Regular.ttf" id="2_1ruwo"]
 
 [node name="QuizUI" type="Control"]
 layout_mode = 3
@@ -16,6 +17,7 @@ offset_bottom = 428.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1ruwo")
 theme_override_font_sizes/font_size = 55
 text = "여기에 문제가 표시됩니다"
 horizontal_alignment = 1
@@ -29,6 +31,7 @@ offset_top = 342.0
 offset_right = 431.0
 offset_bottom = 399.0
 theme_override_colors/font_color = Color(0.5275815, 1, 0.55977714, 1)
+theme_override_fonts/font = ExtResource("2_1ruwo")
 theme_override_font_sizes/font_size = 60
 text = "O"
 flat = true
@@ -40,6 +43,7 @@ offset_top = 342.0
 offset_right = 821.0
 offset_bottom = 399.0
 theme_override_colors/font_color = Color(1, 0.47230315, 0.37671188, 1)
+theme_override_fonts/font = ExtResource("2_1ruwo")
 theme_override_font_sizes/font_size = 60
 text = "X"
 flat = true

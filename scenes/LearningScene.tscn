@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc0fmi6iq722v"]
+[gd_scene load_steps=5 format=3 uid="uid://bc0fmi6iq722v"]
 
 [ext_resource type="Texture2D" uid="uid://5edpny48idp5" path="res://이미지 모아둔 폴더/노트 배경.png" id="1_ubvh6"]
-[ext_resource type="Script" uid="uid://dw2cxq40i4wqi" path="res://scripts/LearningScene.gd" id="2_oi12q"]
+[ext_resource type="Script" path="res://scripts/LearningScene.gd" id="2_oi12q"]
+[ext_resource type="FontFile" uid="uid://kvcriw8j8d3i" path="res://NeoDunggeunmoPro-Regular.ttf" id="3_udxdh"]
 
 [sub_resource type="GDScript" id="GDScript_oi12q"]
 
@@ -44,6 +45,7 @@ offset_top = 141.0
 offset_right = 599.0
 offset_bottom = 327.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "1. 개인정보 보호
 • 이름, 주소, 학교 이름, 전화번호는 올리면 안 돼요.
@@ -58,6 +60,7 @@ offset_top = 365.0
 offset_right = 604.0
 offset_bottom = 551.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "2. 비밀번호 안전하게 만들기
 • 1234, qwerty 같은 쉬운 비밀번호는 위험해요.
@@ -80,6 +83,7 @@ offset_top = 709.0
 offset_right = 1123.0
 offset_bottom = 895.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "3. 보이스피싱 / 피싱 메시지
 • \"엄마야 급히 돈 필요해\" 같은 건 믿으면 안 돼요.
@@ -94,6 +98,7 @@ offset_top = 941.0
 offset_right = 1133.0
 offset_bottom = 1127.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "4. 초상권 / 저작권
 • 친구 얼굴은 허락 없이 올리면 안 돼요.
@@ -121,6 +126,7 @@ offset_top = 958.004
 offset_right = 1547.936
 offset_bottom = 1144.004
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "5. 디지털 발자국
 • 인터넷 흔적은 지워도 남아요.
@@ -140,6 +146,7 @@ offset_top = 1191.004
 offset_right = 1548.724
 offset_bottom = 1377.0039
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "6. 앱 / 게임 권한
 • 설치 시 권한 요청 꼼꼼히 확인하세요.
@@ -161,6 +168,7 @@ offset_top = 107.0
 offset_right = 1247.0
 offset_bottom = 308.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "
 7. 자동 로그인 / 로그아웃
@@ -177,6 +185,7 @@ offset_top = 336.0
 offset_right = 1252.0
 offset_bottom = 537.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "
 8. 기기 잠금 비밀번호
@@ -199,6 +208,7 @@ offset_top = 145.0
 offset_right = 603.0
 offset_bottom = 414.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "9. 사진·영상 공유 주의
 • 집·학교 간판 보이는 사진은 올리면 안 돼요.
@@ -215,6 +225,7 @@ offset_top = 369.0
 offset_right = 604.0
 offset_bottom = 570.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "10. 온라인 친구와 개인정보
 • 게임 친구는 실제로 누군지 몰라요.
@@ -236,6 +247,7 @@ offset_top = 137.0
 offset_right = 1236.0
 offset_bottom = 338.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "11. 게임 아이템 사기
 • 계정 알려주면 100% 사기예요.
@@ -251,6 +263,7 @@ offset_top = 369.0
 offset_right = 1247.0
 offset_bottom = 570.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "12. 계정 해킹 징후
 • 비밀번호가 바뀌었으면 해킹일 수 있어요.
@@ -272,6 +285,7 @@ offset_top = 137.0
 offset_right = 598.0
 offset_bottom = 338.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "13. 링크 / 첨부파일 주의
 • 모르는 파일은 절대 열지 마세요.
@@ -287,6 +301,7 @@ offset_top = 372.0
 offset_right = 594.0
 offset_bottom = 573.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "14. 비밀번호 여러 곳에 다르게 쓰기
 • 같은 비밀번호 여러 곳에 쓰면 위험해요.
@@ -308,6 +323,7 @@ offset_top = 143.0
 offset_right = 1241.0
 offset_bottom = 344.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "15. USB / 외부 저장장치
 • 출처 모르는 USB는 꽂지 마세요.
@@ -323,6 +339,7 @@ offset_top = 371.0
 offset_right = 1241.0
 offset_bottom = 572.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "16. 불법 다운로드
 • 무료 영화·게임 사이트는 불법일 수 있어요.
@@ -344,6 +361,7 @@ offset_top = 147.0
 offset_right = 603.0
 offset_bottom = 348.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "17. 광고 / 유혹 메시지
 • \"당첨되었습니다!\" 대부분 사기예요.
@@ -359,6 +377,7 @@ offset_top = 369.0
 offset_right = 604.0
 offset_bottom = 570.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "18. 모르는 메시지 조심
 • 낯선 사람에게 답하지 마세요.
@@ -380,6 +399,7 @@ offset_top = 143.0
 offset_right = 1238.0
 offset_bottom = 344.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "19. 안전한 기기 사용
 • 공용 PC에 개인정보 입력 금지.
@@ -395,6 +415,7 @@ offset_top = 368.0
 offset_right = 1250.0
 offset_bottom = 569.0
 theme_override_colors/font_color = Color(0.06960687, 0.06447438, 0.05068405, 1)
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 22
 text = "20. 안전한 닉네임 사용
 • 닉네임에 이름·학교·나이를 넣지 마세요.
@@ -430,5 +451,6 @@ offset_left = 1039.0
 offset_top = 47.0
 offset_right = 1222.0
 offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("3_udxdh")
 theme_override_font_sizes/font_size = 18
 text = "메인으로 돌아가기"
