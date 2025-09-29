@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbsmjgfafew1o"]
+[gd_scene load_steps=7 format=3 uid="uid://cbsmjgfafew1o"]
 
 [ext_resource type="Texture2D" uid="uid://bbm85q40xv70j" path="res://이미지 모아둔 폴더/Background.jpg" id="1_c7mg7"]
 [ext_resource type="Script" uid="uid://c33du1d6tr08a" path="res://scenes/resultscene.gd" id="1_nxblt"]
 [ext_resource type="Texture2D" uid="uid://deuahyvbp6hef" path="res://이미지 모아둔 폴더/Retry.PNG" id="2_061pm"]
 [ext_resource type="Texture2D" uid="uid://ccd4y8qrf0du4" path="res://이미지 모아둔 폴더/게임오버.png" id="3_061pm"]
+[ext_resource type="FontFile" uid="uid://kvcriw8j8d3i" path="res://폰트1.ttf" id="4_6a6jd"]
 [ext_resource type="Texture2D" uid="uid://cee2avt44wrl8" path="res://이미지 모아둔 폴더/MainMenu.PNG" id="4_nxblt"]
 
 [node name="Control" type="Control"]
@@ -35,13 +36,14 @@ texture = ExtResource("3_061pm")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.91392803
-anchor_top = -0.6211698
+anchor_top = -0.6044567
 anchor_right = -0.91392803
-anchor_bottom = -0.6211698
+anchor_bottom = -0.6044567
 offset_left = 1750.0
 offset_top = 791.0
 offset_right = 1859.6952
 offset_bottom = 941.739
+theme_override_fonts/font = ExtResource("4_6a6jd")
 theme_override_font_sizes/font_size = 62
 text = "0"
 horizontal_alignment = 1
