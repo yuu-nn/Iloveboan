@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbsmjgfafew1o"]
+[gd_scene load_steps=6 format=3 uid="uid://cbsmjgfafew1o"]
 
 [ext_resource type="Texture2D" uid="uid://bbm85q40xv70j" path="res://이미지 모아둔 폴더/Background.jpg" id="1_c7mg7"]
 [ext_resource type="Script" uid="uid://c33du1d6tr08a" path="res://scenes/resultscene.gd" id="1_nxblt"]
 [ext_resource type="Texture2D" uid="uid://deuahyvbp6hef" path="res://이미지 모아둔 폴더/Retry.PNG" id="2_061pm"]
-[ext_resource type="Texture2D" uid="uid://b20qq13du0dlx" path="res://이미지 모아둔 폴더/NextLevel.PNG" id="3_6a6jd"]
-[ext_resource type="Texture2D" uid="uid://drea4bamugf47" path="res://이미지 모아둔 폴더/Victory.PNG" id="4_6a6jd"]
+[ext_resource type="Texture2D" uid="uid://ccd4y8qrf0du4" path="res://이미지 모아둔 폴더/게임오버.png" id="3_061pm"]
 [ext_resource type="Texture2D" uid="uid://cee2avt44wrl8" path="res://이미지 모아둔 폴더/MainMenu.PNG" id="4_nxblt"]
-[ext_resource type="Texture2D" uid="uid://dn2uqx7xx4dng" path="res://이미지 모아둔 폴더/Reward.PNG" id="6_nxblt"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,39 +27,25 @@ grow_vertical = 2
 texture = ExtResource("1_c7mg7")
 expand_mode = 1
 
+[node name="게임오버" type="Sprite2D" parent="Background"]
+position = Vector2(646, 368)
+texture = ExtResource("3_061pm")
+
 [node name="Score" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.8912363
-anchor_top = -0.88718665
-anchor_right = -0.94968325
-anchor_bottom = -0.9773524
+anchor_left = -0.91392803
+anchor_top = -0.6211698
+anchor_right = -0.91392803
+anchor_bottom = -0.6211698
 offset_left = 1750.0
 offset_top = 791.0
 offset_right = 1859.6952
 offset_bottom = 941.739
 theme_override_font_sizes/font_size = 62
 text = "0"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="NextLevel" type="TextureButton" parent="Background"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -629.0
-offset_top = -330.0
-offset_right = -202.0
-offset_bottom = 159.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("3_6a6jd")
-texture_pressed = ExtResource("3_6a6jd")
-texture_hover = ExtResource("3_6a6jd")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="MainMenu" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -70,12 +54,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -430.0
-offset_top = -295.0
-offset_right = 9.0
-offset_bottom = 135.0
+offset_left = -660.99994
+offset_top = -360.99997
+offset_right = -222.0
+offset_bottom = 69.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.67, 0.67)
 texture_normal = ExtResource("4_nxblt")
 texture_pressed = ExtResource("4_nxblt")
 texture_hover = ExtResource("4_nxblt")
@@ -84,41 +69,14 @@ stretch_mode = 0
 
 [node name="Retry" type="TextureButton" parent="Background"]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 432.0
-offset_right = 823.0
-offset_bottom = 828.0
+offset_left = 311.0001
+offset_top = 282.00003
+offset_right = 700.0
+offset_bottom = 678.0
+scale = Vector2(0.66, 0.6)
+pivot_offset = Vector2(286, 238)
 texture_normal = ExtResource("2_061pm")
 texture_pressed = ExtResource("2_061pm")
 texture_hover = ExtResource("2_061pm")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Victory" type="TextureRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -279.0
-offset_top = -21.0
-offset_right = 255.0
-offset_bottom = 507.0
-grow_horizontal = 2
-texture = ExtResource("4_6a6jd")
-expand_mode = 1
-
-[node name="Reward" type="TextureRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -362.0
-offset_top = -339.0
-offset_right = 335.0
-offset_bottom = 390.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_nxblt")
-expand_mode = 1
