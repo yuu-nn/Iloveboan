@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://kl4q5c7cin5o"]
+[gd_scene load_steps=19 format=3 uid="uid://kl4q5c7cin5o"]
 
 [ext_resource type="Script" uid="uid://8rvmhfajhf64" path="res://scripts/player.gd" id="1_kd01c"]
 [ext_resource type="Texture2D" uid="uid://c0hjgh17hr1vu" path="res://이미지 모아둔 폴더/거지.png" id="2_82agk"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dxskr6vkf4iys" path="res://scenes/obstacles/obstacle_4.tscn" id="8_4ley2"]
 [ext_resource type="PackedScene" uid="uid://b8v7soica2rlp" path="res://scenes/obstacles/obstacle_5.tscn" id="9_mamp7"]
 [ext_resource type="Script" uid="uid://dsm5t5l6fmmct" path="res://scripts/gamecontroller.gd" id="13_e0rck"]
-[ext_resource type="PackedScene" uid="uid://cufsyvitr16so" path="res://scripts/QuizUI.tscn" id="13_ieuyw"]
+[ext_resource type="PackedScene" uid="uid://cufsyvitr16so" path="res://scenes/QuizUI.tscn" id="13_ieuyw"]
+[ext_resource type="Texture2D" uid="uid://bym57v5elufch" path="res://이미지 모아둔 폴더/backward.png" id="14_4ley2"]
+[ext_resource type="Script" uid="uid://cbbg5s1305il" path="res://scripts/texture_button.gd" id="15_mamp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiyhu"]
 size = Vector2(94.89752, 135.69005)
@@ -84,13 +86,20 @@ text = "0"
 
 [node name="QuizUI" parent="UI" instance=ExtResource("13_ieuyw")]
 
-[node name="Button" type="Button" parent="UI"]
-offset_left = 1237.0
-offset_top = 11.0
-offset_right = 1261.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 24
-text = "ll"
+[node name="TextureButton" type="TextureButton" parent="UI"]
+offset_left = 1655.0
+offset_top = 62.0
+offset_right = 2167.0
+offset_bottom = 574.0
+scale = Vector2(0.090220034, 0.09299174)
+pivot_offset = Vector2(-470, -60)
+texture_normal = ExtResource("14_4ley2")
+script = ExtResource("15_mamp7")
+
+[node name="QuitDialog" type="ConfirmationDialog" parent="UI"]
+oversampling_override = 1.0
+position = Vector2i(550, 300)
+dialog_text = "진짜 그만두겠습니까?"
 
 [node name="gamecontroller" type="Node2D" parent="." groups=["gamecontroller", "player"]]
 script = ExtResource("13_e0rck")
