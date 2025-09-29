@@ -19,7 +19,22 @@ var ShopItemScene: PackedScene = preload("res://scenes/ShopItem.tscn")
 var current_category: String = "employees"
 
 func _ready() -> void:
-	# SC 변경 시그널
+	# 레이아웃 강제 (웹에서 깨지는 경우 방지)
+	set_anchors_preset(Control.PRESET_FULL_RECT)
+	$RootMargin.set_anchors_preset(Control.PRESET_FULL_RECT)
+
+	var vbox = $RootMargin/VBox
+	var scroller = $RootMargin/VBox/Scroller
+	var grid = $RootMargin/VBox/Scroller/Grid
+
+	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroller.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroller.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+	# SC 변경 시그널 연결
 	if GS.has_signal("sc_changed"):
 		GS.sc_changed.connect(_refresh_sc)
 
@@ -70,8 +85,6 @@ func load_items(category: String) -> void:
 
 	for it in items_to_load:
 		var card := ShopItemScene.instantiate() as PanelContainer
-
-		# 최소 크기 보장 (혹시 ShopItem.tscn에 안 줬다면)
 		card.custom_minimum_size = Vector2(240, 280)
 
 		# 기본 정보
@@ -101,7 +114,8 @@ func load_items(category: String) -> void:
 		else:
 			_lock_buy_button(card, "구매하기", false)
 
-	# 최종 확인 로그
+	# 레이아웃 강제 갱신
+	grid.queue_sort()
 	print("[ShopScene] grid children =", grid.get_child_count())
 
 # ------------------------------

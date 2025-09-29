@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://behiqb083bfc0"]
+[gd_scene load_steps=10 format=3 uid="uid://behiqb083bfc0"]
 
 [ext_resource type="Script" uid="uid://bthm0x58oq3yx" path="res://scripts/ShopItem.gd" id="1_fxw1a"]
+[ext_resource type="Texture2D" uid="uid://ccyba02ivap0b" path="res://itemicons/desk.png" id="2_hpwti"]
 [ext_resource type="StyleBox" uid="uid://dt4ttqproyk4p" path="res://themes/btn_green_pressed.tres" id="3_yiefq"]
 [ext_resource type="StyleBox" uid="uid://bwsduhudj7ocm" path="res://themes/btn_green_hover.tres" id="4_76k32"]
 [ext_resource type="StyleBox" uid="uid://dwoxr4m10yf0v" path="res://themes/btn_disabled_gray.tres" id="4_hpwti"]
@@ -46,9 +47,10 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Icon" type="TextureRect" parent="ItemVBox"]
+[node name="desk" type="TextureRect" parent="ItemVBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+texture = ExtResource("2_hpwti")
 stretch_mode = 5
 
 [node name="ItemName" type="Label" parent="ItemVBox"]
@@ -56,7 +58,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.06666667, 0.09411765, 0.15294118, 1)
 theme_override_fonts/font = SubResource("SystemFont_76k32")
 theme_override_font_sizes/font_size = 20
-text = "아이템 이름"
+text = "책상"
 horizontal_alignment = 1
 
 [node name="DescLabel" type="Label" parent="ItemVBox"]
@@ -67,16 +69,16 @@ theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="BottomBar" type="HBoxContainer" parent="ItemVBox"]
-layout_mode = 2
-theme_override_constants/separation = 8
-alignment = 1
-
-[node name="PriceLabel" type="Label" parent="ItemVBox/BottomBar"]
+[node name="PriceLabel" type="Label" parent="ItemVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.8, 0.08235294, 1)
 theme_override_font_sizes/font_size = 20
 text = "200 SC"
+
+[node name="BottomBar" type="HBoxContainer" parent="ItemVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
 
 [node name="BuyBtn" type="Button" parent="ItemVBox/BottomBar"]
 custom_minimum_size = Vector2(110, 40)
