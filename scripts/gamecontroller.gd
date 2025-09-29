@@ -90,7 +90,7 @@ func _game_over() -> void:
 # -----------------------
 var _quiz_pool := [
 	{"question":"내 이름·학교·학년을 합친 닉네임은 안전하다.", "type":"ox", "answer":false},
-	{"question":"더 위험한 정보는?", "type":"multi", "options":["내가 좋아하는 만화","우리 집 주소"], "answer":1},
+	{"question":"인터넷에 올렸을 때 더 위험한 정보는?", "type":"multi", "options":["내가 좋아하는 만화","우리 집 주소"], "answer":1},
 
 	{"question":"비밀번호는 길기만 하면 안전하다.", "type":"ox", "answer":false},
 	{"question":"더 안전한 비밀번호는?", "type":"multi", "options":["abcd1234","Abcd!1234"], "answer":1},
@@ -117,31 +117,31 @@ var _quiz_pool := [
 	{"question":"올려도 비교적 안전한 사진은?", "type":"multi", "options":["집 현관문 사진","내가 먹은 음식 사진"], "answer":1},
 
 	{"question":"온라인 친구에게 개인정보를 말하면 안 된다.", "type":"ox", "answer":true},
-	{"question":"더 위험한 질문은?", "type":"multi", "options":["좋아하는 색 뭐야?","너네 집 어디야?"], "answer":1},
+	{"question":"온라인 친구가 나에게 했을 때 더 위험한 질문은?", "type":"multi", "options":["좋아하는 색 뭐야?","너네 집 어디야?"], "answer":1},
 	
 	{"question":"'아이템 줄게, 계정 알려줘'는 사기다.", "type":"ox", "answer":true},
-	{"question":"더 안전한 습관은?", "type":"multi", "options":["무료 아이템 사이트 로그인","공식 방법으로 거래"], "answer":1},
+	{"question":"온라인 거래를 할때 더 안전한 습관은?", "type":"multi", "options":["무료 아이템 사이트 로그인","공식 방법으로 거래"], "answer":1},
 
 	{"question":"내가 안 보낸 메시지가 갔으면 해킹일 수 있다.", "type":"ox", "answer":true},
 	{"question":"해킹 의심 시 해야 할 일은?", "type":"multi", "options":["비밀번호 변경","그냥 무시"], "answer":0},
 
 	{"question":"모르는 사람이 보낸 파일은 열면 위험하다.", "type":"ox", "answer":true},
-	{"question":"더 안전한 행동은?", "type":"multi", "options":["부모님께 먼저 보여준다","그냥 다운로드"], "answer":0},
+	{"question":"모르는 사람이 파일을 보냈을 때 더 안전한 행동은?", "type":"multi", "options":["부모님께 먼저 보여준다","그냥 다운로드"], "answer":0},
 
 	{"question":"모든 사이트에 같은 비밀번호는 안전하다.", "type":"ox", "answer":false},
-	{"question":"더 안전한 습관은?", "type":"multi", "options":["사이트마다 다르게 쓰기","같은 비번 반복 사용"], "answer":0},
+	{"question":"비밀번호 설정에 대해 더 안전한 습관은?", "type":"multi", "options":["사이트마다 다르게 쓰기","같은 비번 반복 사용"], "answer":0},
 
 	{"question":"출처 모르는 USB는 위험할 수 있다.", "type":"ox", "answer":true},
-	{"question":"더 안전한 행동은?", "type":"multi", "options":["그냥 꽂아본다","부모님께 보여준다"], "answer":1},
+	{"question":"출처 없는 USB에 대해 더 안전한 행동은?", "type":"multi", "options":["그냥 꽂아본다","부모님께 보여준다"], "answer":1},
 
 	{"question":"'무료 영화' 사이트는 대부분 안전하다.", "type":"ox", "answer":false},
-	{"question":"불법 다운로드의 위험은?", "type":"multi", "options":["바이러스 감염","무료 아이템 받기"], "answer":0},
+	{"question":"불법 다운로드를 하게 될 경우엔?", "type":"multi", "options":["바이러스 감염","무료 아이템 받기"], "answer":0},
 
 	{"question":"'당첨되셨습니다!'는 대부분 사기일 수 있다.", "type":"ox", "answer":true},
 	{"question":"광고 메시지를 받았을 때 더 안전한 행동은?", "type":"multi", "options":["부모님께 보여준다","개인정보 입력"], "answer":0},
 
 	{"question":"모르는 사람이 개인정보를 물어보면 알려줘도 된다.", "type":"ox", "answer":false},
-	{"question":"올바른 행동은?", "type":"multi", "options":["부모님께 보여준다","바로 대답한다"], "answer":0},
+	{"question":"모르는 사람이 개인정보를 물어볼 때 올바른 행동은?", "type":"multi", "options":["부모님께 보여준다","바로 대답한다"], "answer":0},
 
 	{"question":"공용 컴퓨터에 개인정보 저장은 안전하다.", "type":"ox", "answer":false},
 	{"question":"학교 컴퓨터 사용 후 더 안전한 행동은?", "type":"multi", "options":["로그아웃·기록삭제","그냥 끈다"], "answer":0},
