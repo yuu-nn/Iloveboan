@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c04nh6fgm6tfy"]
+[gd_scene load_steps=8 format=3 uid="uid://c04nh6fgm6tfy"]
 
 [ext_resource type="StyleBox" uid="uid://bok8bjy3ybhml" path="res://themes/panel_card.tres" id="1_0m1qb"]
 [ext_resource type="Script" uid="uid://dsvax4202m3t8" path="res://scripts/SettingsScene.gd" id="1_8limm"]
+[ext_resource type="FontFile" uid="uid://kvcriw8j8d3i" path="res://폰트1.ttf" id="3_i27r7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8limm"]
 bg_color = Color(0.9529412, 0.95686275, 0.9647059, 1)
@@ -97,12 +98,14 @@ theme_override_constants/separation = 10
 [node name="TitleLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/HeaderHBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 theme_override_font_sizes/font_size = 24
 text = "⚙️ 게임 설정"
 
 [node name="SubtitleLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/HeaderHBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6117647, 0.6392157, 0.6862745, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 theme_override_font_sizes/font_size = 14
 text = "Settings"
 horizontal_alignment = 2
@@ -125,6 +128,7 @@ theme_override_constants/separation = 10
 [node name="NickLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 theme_override_font_sizes/font_size = 18
 text = "닉네임 변경"
 
@@ -135,11 +139,13 @@ theme_override_constants/separation = 8
 [node name="NickLineEdit" type="LineEdit" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox/NickInputRow"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i27r7")
 text = "닉네임을 입력하세요"
 
 [node name="NickApplyButton" type="Button" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/NicknamePanel/NicknameVBox/NickInputRow"]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i27r7")
 text = "변경"
 
 [node name="ResetPanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow"]
@@ -155,11 +161,13 @@ theme_override_constants/separation = 10
 [node name="ResetLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/ResetPanel/ResetVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 text = "게임 데이터 초기화"
 
 [node name="ResetButton" type="Button" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow/ResetPanel/ResetVBox"]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_i27r7")
 text = "초기화"
 
 [node name="AudioPanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox/ContentFlow"]
@@ -180,6 +188,7 @@ theme_override_constants/separation = 9
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.25490198, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 theme_override_font_sizes/font_size = 14
 text = "\"배경음\""
 
@@ -195,6 +204,7 @@ theme_override_constants/separation = 9
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.25490198, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 theme_override_font_sizes/font_size = 14
 text = "\"효과음\""
 
@@ -205,6 +215,7 @@ size_flags_horizontal = 3
 [node name="InfoLabel" type="Label" parent="ScrollContainer/PanelContainer/MarginContainer/RootVBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6117647, 0.6392157, 0.6862745, 1)
+theme_override_fonts/font = ExtResource("3_i27r7")
 theme_override_font_sizes/font_size = 13
 text = "버전 0.1.0 · 제작: Team Iloveboan"
 horizontal_alignment = 1

@@ -44,7 +44,7 @@ func _on_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/jumpgame.tscn")
 
 func _on_setting_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ProfileScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/SettingsScene.tscn")
 
 # ───────────────────────────────
 # 닉네임 변경 시 실행
