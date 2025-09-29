@@ -74,6 +74,7 @@ func _ready() -> void:
 # ─────────────────────────────────────────
 func _on_nick_apply_pressed() -> void:
 	var new_name := nick_line_edit.text if nick_line_edit else ""
+	Globals.nickname = new_name
 	print("닉네임 변경:", new_name)
 
 func _on_reset_pressed() -> void:

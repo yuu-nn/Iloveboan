@@ -19,9 +19,10 @@ script = ExtResource("1_50cbs")
 
 [node name="시작배경" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1279.0
+offset_bottom = 719.0
 texture = ExtResource("2_5j6bw")
+expand_mode = 1
 
 [node name="시작로고" type="TextureRect" parent="시작배경"]
 layout_mode = 1
