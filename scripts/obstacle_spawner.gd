@@ -8,7 +8,8 @@ extends Node2D
 var timer := 0.0
 var next_spawn_time := 0.0
 
-func _ready():
+func _ready() -> void:
+	add_to_group("spawner")   # 그룹 등록
 	set_next_spawn_time()
 
 func _process(delta):

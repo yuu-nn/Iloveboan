@@ -5,7 +5,7 @@ extends CharacterBody2D   # Node2D 대신 CharacterBody2D로 바꿔야 충돌/�
 
 # 점프/중력 관련
 @export var gravity := 6000.0
-@export var jump_force := -1800.0
+@export var jump_force := -1900.0
 
 # 애니메이션 관련
 var timer := 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://kl4q5c7cin5o"]
+[gd_scene load_steps=17 format=3 uid="uid://kl4q5c7cin5o"]
 
 [ext_resource type="Script" uid="uid://8rvmhfajhf64" path="res://scripts/player.gd" id="1_kd01c"]
 [ext_resource type="Texture2D" uid="uid://c0hjgh17hr1vu" path="res://이미지 모아둔 폴더/거지.png" id="2_82agk"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dxskr6vkf4iys" path="res://scenes/obstacles/obstacle_4.tscn" id="8_4ley2"]
 [ext_resource type="PackedScene" uid="uid://b8v7soica2rlp" path="res://scenes/obstacles/obstacle_5.tscn" id="9_mamp7"]
 [ext_resource type="Script" uid="uid://dsm5t5l6fmmct" path="res://scripts/gamecontroller.gd" id="13_e0rck"]
+[ext_resource type="PackedScene" uid="uid://cufsyvitr16so" path="res://scripts/QuizUI.tscn" id="13_ieuyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiyhu"]
 size = Vector2(94.89752, 135.69005)
@@ -72,16 +73,16 @@ texture = ExtResource("7_e0rck")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ScoreLabel" type="Label" parent="UI"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 56.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 40
+text = "0"
 
-[node name="Label" type="Label" parent="UI/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="QuizUI" parent="UI" instance=ExtResource("13_ieuyw")]
 
 [node name="gamecontroller" type="Node2D" parent="." groups=["gamecontroller", "player"]]
 script = ExtResource("13_e0rck")

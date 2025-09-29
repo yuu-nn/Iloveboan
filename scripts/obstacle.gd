@@ -35,3 +35,4 @@ func _on_body_entered(body: Node) -> void:
 
 func game_over() -> void:
 	get_tree().reload_current_scene()
+	
