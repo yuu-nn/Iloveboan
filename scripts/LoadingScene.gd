@@ -30,7 +30,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# 로딩바 진행
 	if progress_bar.value < 100:
-		progress_bar.value += delta * 20.0   # 5초 정도 걸려서 100% 됨
+		progress_bar.value += delta * 40.0   # 5초 정도 걸려서 100% 됨
 	else:
 		progress_bar.value = 100
 		# 🎮 jumpgame.tscn으로 이동
