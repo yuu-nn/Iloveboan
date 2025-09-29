@@ -17,25 +17,30 @@ script = ExtResource("1_nxblt")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = 5.0
-offset_top = 15.0
-offset_right = 3493.0
-offset_bottom = 2850.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1239.0
+offset_bottom = 681.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_c7mg7")
 expand_mode = 1
 
 [node name="Score" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.017201835
-anchor_top = -0.017989418
-anchor_right = -0.015194954
-anchor_bottom = 0.030335097
+anchor_left = -0.8912363
+anchor_top = -0.88718665
+anchor_right = -0.94968325
+anchor_bottom = -0.9773524
 offset_left = 1750.0
 offset_top = 791.0
 offset_right = 1859.6952
 offset_bottom = 941.739
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 62
 text = "0"
 metadata/_edit_use_anchors_ = true
 
@@ -46,15 +51,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -623.25
-offset_top = -1134.0
-offset_right = 623.25
-offset_bottom = 149.0
+offset_left = -629.0
+offset_top = -330.0
+offset_right = -202.0
+offset_bottom = 159.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("3_6a6jd")
 texture_pressed = ExtResource("3_6a6jd")
 texture_hover = ExtResource("3_6a6jd")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="MainMenu" type="TextureButton" parent="Background"]
@@ -64,14 +70,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1102.0
-offset_top = -1011.0
-offset_bottom = 61.0
+offset_left = -430.0
+offset_top = -295.0
+offset_right = 9.0
+offset_bottom = 135.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("4_nxblt")
 texture_pressed = ExtResource("4_nxblt")
 texture_hover = ExtResource("4_nxblt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Retry" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 432.0
+offset_right = 823.0
+offset_bottom = 828.0
+texture_normal = ExtResource("2_061pm")
+texture_pressed = ExtResource("2_061pm")
+texture_hover = ExtResource("2_061pm")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Victory" type="TextureRect" parent="Background"]
@@ -79,23 +99,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1138.625
-offset_top = -59.0
-offset_right = 1138.625
-offset_bottom = 2154.0
+offset_left = -279.0
+offset_top = -21.0
+offset_right = 255.0
+offset_bottom = 507.0
 grow_horizontal = 2
 texture = ExtResource("4_6a6jd")
-
-[node name="Retry" type="TextureButton" parent="Background"]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 1821.0
-offset_right = 1140.0
-offset_bottom = 2845.0
-texture_normal = ExtResource("2_061pm")
-texture_pressed = ExtResource("2_061pm")
-texture_hover = ExtResource("2_061pm")
-stretch_mode = 0
+expand_mode = 1
 
 [node name="Reward" type="TextureRect" parent="Background"]
 layout_mode = 1
@@ -104,10 +114,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1072.5
-offset_top = -1138.0
-offset_right = 1072.5
-offset_bottom = 1392.0
+offset_left = -362.0
+offset_top = -339.0
+offset_right = 335.0
+offset_bottom = 390.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_nxblt")
+expand_mode = 1
