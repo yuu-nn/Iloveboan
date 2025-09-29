@@ -29,7 +29,7 @@ offset_top = 342.0
 offset_right = 431.0
 offset_bottom = 399.0
 theme_override_colors/font_color = Color(0.5275815, 1, 0.55977714, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "O"
 flat = true
 
@@ -40,13 +40,13 @@ offset_top = 342.0
 offset_right = 821.0
 offset_bottom = 399.0
 theme_override_colors/font_color = Color(1, 0.47230315, 0.37671188, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "X"
 flat = true
 
 [node name="OptionsContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 576.0
+offset_left = 563.0
 offset_top = 360.0
-offset_right = 626.0
-offset_bottom = 410.0
+offset_right = 623.0
+offset_bottom = 420.0

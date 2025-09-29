@@ -84,5 +84,13 @@ text = "0"
 
 [node name="QuizUI" parent="UI" instance=ExtResource("13_ieuyw")]
 
+[node name="Button" type="Button" parent="UI"]
+offset_left = 1237.0
+offset_top = 11.0
+offset_right = 1261.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 24
+text = "ll"
+
 [node name="gamecontroller" type="Node2D" parent="." groups=["gamecontroller", "player"]]
 script = ExtResource("13_e0rck")
