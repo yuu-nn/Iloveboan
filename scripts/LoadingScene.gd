@@ -17,7 +17,8 @@ var dot_timer := 0.0
 var dot_interval := 0.5
 var dot_count := 0
 
-func _ready():
+func _ready() -> void:
+	# 캐릭터 애니메이션 프레임 로드
 	frames = [
 		load("res://이미지 모아둔 폴더/거지.png") as Texture2D,
 		load("res://이미지 모아둔 폴더/뛰는 거지.png") as Texture2D,
@@ -29,18 +30,19 @@ func _ready():
 func _process(delta: float) -> void:
 	# 로딩바 진행
 	if progress_bar.value < 100:
-		progress_bar.value += delta * 20.0
+		progress_bar.value += delta * 20.0   # 5초 정도 걸려서 100% 됨
 	else:
 		progress_bar.value = 100
+		# 🎮 jumpgame.tscn으로 이동
 		get_tree().change_scene_to_file("res://scenes/MainScene.tscn")
 		return
 
-	# 캐릭터 위치
+	# 캐릭터 위치 (로딩바 따라가기)
 	var ratio := progress_bar.value / 100.0
 	var x := progress_bar.position.x + progress_bar.size.x * ratio
 	character.position = Vector2(x, progress_bar.position.y - 40)
 
-	# 프레임 애니메이션
+	# 프레임 애니메이션 (뛰는 동작)
 	acc += delta
 	if acc >= change_every:
 		frame_idx = (frame_idx + 1) % frames.size()

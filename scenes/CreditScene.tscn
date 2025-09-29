@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://diwoqp0laypbe"]
+[gd_scene load_steps=3 format=3 uid="uid://diwoqp0laypbe"]
 
-[ext_resource type="Script" uid="uid://calt2nktultg" path="res://CreditScene.gd" id="1_nt8iv"]
+[ext_resource type="Script" uid="uid://calt2nktultg" path="res://scripts/CreditScene.gd" id="1_nt8iv"]
+[ext_resource type="Texture2D" uid="uid://ddgrq25l6olvi" path="res://이미지 모아둔 폴더/회색회색.png" id="2_i8sqb"]
 
 [node name="CreditScene" type="Control"]
 layout_mode = 3
@@ -10,6 +11,14 @@ offset_top = 118.0
 offset_right = 87.0
 offset_bottom = 133.0
 script = ExtResource("1_nt8iv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -149.0
+offset_right = 1239.0
+offset_bottom = 634.0
+texture = ExtResource("2_i8sqb")
 
 [node name="Background" type="Control" parent="."]
 anchors_preset = 0
