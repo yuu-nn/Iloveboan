@@ -1,3 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Godot_v4.5-stable_export_templates.tpz
+export_presets.cfg
+icon.svg.import 폰트1.ttf.import
